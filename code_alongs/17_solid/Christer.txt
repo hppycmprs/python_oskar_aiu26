@@ -1,0 +1,5 @@
+Employee report
+Name: Christer
+Phone: 031-892121
+Salary: 35000
+Net salary: <bound method Employee.net_salary of <__main__.Employee object at 0x10c2e2e40>>

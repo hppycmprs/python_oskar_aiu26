@@ -1,5 +1,4 @@
 from shape2D import Shape2D
-from abc import ABC
 from utils import validate_type, validate_positive_value
 import numpy as np
 
@@ -18,4 +17,26 @@ class Circle(Shape2D):
         perimeter = self.radius*2*np.pi
         return perimeter
 
-    
+    def translate(self, x, y):
+        return
+
+    def __eq__(self, other):
+        return
+
+    def __lt__(self, other):
+        return
+
+    def __gt__(self, other):
+        return
+
+    def __le__(self, other):
+        return
+
+    def __ge__(self, other):
+        return
+
+    def __repr__(self):
+        return
+
+    def __str__(self):
+        return

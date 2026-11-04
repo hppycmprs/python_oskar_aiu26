@@ -1,15 +1,14 @@
 from abc import ABC, abstractmethod
-from utils import validate_type, validate_positive_value
+from utils import validate_type
 
 class Shape2D(ABC):
     def __init__(self, x = 0, y = 0):
-        validate_type(x)
-        self.x = value
-        validate_type(y)
-        self.y = value
+        self.x = validate_type(x)
+        self.y = validate_type(y)
 
     def translate(self, x, y):
-        self.valid_type(x, y)
+        validate_type(x)
+        validate_type(y)
         self.x += x
         self.y += y
 
@@ -42,3 +41,9 @@ class Shape2D(ABC):
     @abstractmethod
     def __ge__(self, other):
         pass
+
+    def __repr__(self):
+        return
+
+    def __str__(self):
+        return

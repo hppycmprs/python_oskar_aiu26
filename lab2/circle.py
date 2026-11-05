@@ -21,7 +21,10 @@ class Circle(Shape2D):
         return
 
     def __eq__(self, other):
-        return
+        if isinstance(other, Circle):
+            return self.radius == other.radius
+        else:
+            return False
 
     def __lt__(self, other):
         return

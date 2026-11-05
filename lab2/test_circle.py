@@ -37,18 +37,18 @@ def test_valid_area():
     c = Circle(5)
     assert c.area == approx(5**2*np.pi) # approx function learnt from ChatGPT
 
-def test_read_only_area():
-    assert
+#def test_read_only_area():
+#    assert
 
 def test_valid_perimeter():
     c = Circle(5)
     assert c.perimeter == approx(5*2*np.pi)
 
-def test_read_only_perimeter():
-    assert
+#def test_read_only_perimeter():
+#    assert
 
-def test_translate():
-    assert
+#def test_translate():
+#    assert
 
 def test_eq():
     c1 = Circle(5, 5, 5)

@@ -1,5 +1,7 @@
-from pytest import raises
+from pytest import raises, approx
 from circle import Circle
+from rectangle import Rectangle
+import numpy as np
 
 def test_valid_init():
     c = Circle(5, 5, 5)
@@ -31,26 +33,58 @@ def test_invalid_x_y_init():
     with raises (TypeError):
         Circle(5, 5, False)
 
-def test_area():
-    assert 
+def test_valid_area():
+    c = Circle(5)
+    assert c.area == approx(5**2*np.pi) # approx function learnt from ChatGPT
 
-def test_perimeter():
+def test_read_only_area():
+    assert
+
+def test_valid_perimeter():
+    c = Circle(5)
+    assert c.perimeter == approx(5*2*np.pi)
+
+def test_read_only_perimeter():
     assert
 
 def test_translate():
     assert
 
 def test_eq():
-    assert
+    c1 = Circle(5, 5, 5)
+    c2 = Circle(5, 5, 6)
+    c3 = Circle(6)
+    r1 = Rectangle(5, 5, 5, 5)
+    assert c1 == c2
+    assert c1 != c3
+    assert c1 != r1
 
 def test_lt():
-    assert
+    c1 = Circle(5)
+    c2 = Circle(6)
+    c3 = Circle(5)
+    assert c1 < c2
+    assert not (c1 < c3)
 
 def test_gt():
-    assert
+    c1 = Circle(5)
+    c2 = Circle(6)
+    c3 = Circle(5)
+    assert c2 > c1
+    assert not (c1 > c3)
 
 def test_le():
-    assert
+    c1 = Circle(5)
+    c2 = Circle(5)
+    c3 = Circle(4)
+    assert c1 <= c2
+    assert c3 <= c1
+    assert not (c1 <= c3)
 
 def test_ge():
-    assert
+    c1 = Circle(5)
+    c2 = Circle(5)
+    c3 = Circle(6)
+    assert c1 >= c2
+    assert c3 >= c1
+    assert not (c1 >= c3)

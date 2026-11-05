@@ -17,26 +17,38 @@ class Circle(Shape2D):
         perimeter = self.radius*2*np.pi
         return perimeter
 
-    def translate(self, x, y):
-        return
-
-    def __eq__(self, other):
+    def __eq__(self, other): # only compares circles to circles
         if isinstance(other, Circle):
             return self.radius == other.radius
-        else:
-            return False
+        return NotImplemented
 
-    def __lt__(self, other):
-        return
+    def __lt__(self, other): # didn't implement function to handle a number as other, as I couldn't find that particular requirement in the assignment
+        if isinstance(other, Circle):
+            return self.radius < other.radius
+        elif isinstance(other, Shape2D):
+            return self.area < other.area
+        return NotImplemented
 
     def __gt__(self, other):
-        return
+        if isinstance(other, Circle):
+            return self.radius > other.radius
+        elif isinstance(other, Shape2D):
+            return self.area > other.area
+        return NotImplemented
 
     def __le__(self, other):
-        return
+        if isinstance(other, Circle):
+            return self.radius <= other.radius
+        elif isinstance(other, Shape2D):
+            return self.area <= other.area
+        return NotImplemented
 
     def __ge__(self, other):
-        return
+        if isinstance(other, Circle):
+            return self.radius >= other.radius
+        elif isinstance(other, Shape2D):
+            return self.area >= other.area
+        return NotImplemented
 
     def __repr__(self):
         return

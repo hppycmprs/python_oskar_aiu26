@@ -17,41 +17,16 @@ class Circle(Shape2D):
         perimeter = self.radius*2*np.pi
         return perimeter
 
-    def __eq__(self, other): # only compares circles to circles
+    def unit_circle_or_not(self): # code block simplified using ChatGPT
+        return self.radius == 1
+
+    def __eq__(self, other):
         if isinstance(other, Circle):
             return self.radius == other.radius
         return NotImplemented
 
-    def __lt__(self, other): # didn't implement function to handle a number as other, as I couldn't find that particular requirement in the assignment
-        if isinstance(other, Circle):
-            return self.radius < other.radius
-        elif isinstance(other, Shape2D):
-            return self.area < other.area
-        return NotImplemented
-
-    def __gt__(self, other):
-        if isinstance(other, Circle):
-            return self.radius > other.radius
-        elif isinstance(other, Shape2D):
-            return self.area > other.area
-        return NotImplemented
-
-    def __le__(self, other):
-        if isinstance(other, Circle):
-            return self.radius <= other.radius
-        elif isinstance(other, Shape2D):
-            return self.area <= other.area
-        return NotImplemented
-
-    def __ge__(self, other):
-        if isinstance(other, Circle):
-            return self.radius >= other.radius
-        elif isinstance(other, Shape2D):
-            return self.area >= other.area
-        return NotImplemented
-
     def __repr__(self):
-        return
+        return f"Circle(radius={self.radius}, x={self.x}, y={self.y})"
 
     def __str__(self):
-        return
+        return f"Circle with radius {self.radius}, centered at ({self.x}, {self.y})"

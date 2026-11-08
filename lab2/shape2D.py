@@ -11,6 +11,30 @@ class Shape2D(ABC):
         validate_type(y)
         self.x += x
         self.y += y
+    
+    def __lt__(self, other):
+        if isinstance(other, Shape2D):
+            return self.area < other.area
+        return NotImplemented
+
+    def __gt__(self, other):
+        if isinstance(other, Shape2D):
+            return self.area > other.area
+        return NotImplemented
+
+    def __le__(self, other):
+        if isinstance(other, Shape2D):
+            return self.area <= other.area
+        return NotImplemented
+
+    def __ge__(self, other):
+        if isinstance(other, Shape2D):
+            return self.area >= other.area
+        return NotImplemented
+
+    @abstractmethod
+    def __eq__(self, other):
+        pass
 
     @property
     @abstractmethod
@@ -21,29 +45,3 @@ class Shape2D(ABC):
     @abstractmethod
     def perimeter(self):
         pass
-
-    @abstractmethod
-    def __eq__(self, other):
-        pass
-
-    @abstractmethod
-    def __lt__(self, other):
-        pass
-
-    @abstractmethod
-    def __gt__(self, other):
-        pass
-
-    @abstractmethod
-    def __le__(self, other):
-        pass
-
-    @abstractmethod
-    def __ge__(self, other):
-        pass
-
-    def __repr__(self):
-        return
-
-    def __str__(self):
-        return

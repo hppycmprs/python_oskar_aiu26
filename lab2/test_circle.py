@@ -51,8 +51,27 @@ def test_read_only_perimeter():
     with raises(AttributeError):
         c.perimeter = 6
 
-#def test_translate():
-#    assert
+def test_valid_translate():
+    c1 = Circle(5, 5, 5)
+    c1.translate(5, 5)
+    assert c1.x == 10
+    assert c1.y == 10
+    c1.translate(0.5, 0.5)
+    assert c1.x == 10.5
+    assert c1.y == 10.5
+
+def test_invalid_translate():
+    c1 = Circle(5, 5, 5)
+    with raises (TypeError):
+        c1.translate("5", 5)
+    with raises (TypeError):
+        c1.translate(5, "5")
+    with raises (TypeError):
+        c1.translate(True, 5)
+    with raises (TypeError):
+        c1.translate(5, False)
+    assert c1.x == 5
+    assert c1.y == 5
 
 def test_eq():
     c1 = Circle(5, 5, 5)

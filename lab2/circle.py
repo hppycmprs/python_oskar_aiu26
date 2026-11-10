@@ -26,7 +26,7 @@ class Circle(Shape2D):
         return perimeter
 
     def unit_circle_or_not(self): # code block simplified using ChatGPT
-        return self.radius == 1
+        return self.radius == 1 and self.x == 0 and self.y == 0
 
     def __eq__(self, other):
         if isinstance(other, Circle):

@@ -26,7 +26,7 @@ class Sphere(Shape3D):
         return surface_area
 
     def unit_sphere_or_not(self):
-        return self.radius == 1
+        return self.radius == 1 and self.x == 0 and self.y == 0 and self.z == 0
 
     def __eq__(self, other):
         if isinstance(other, Sphere):

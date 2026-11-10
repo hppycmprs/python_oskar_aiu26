@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from utils import validate_type
 
 class Shape2D(ABC):
-    def __init__(self, x = 0, y = 0):
+    def __init__(self, x=0, y=0):
         self.x = validate_type(x)
         self.y = validate_type(y)
 

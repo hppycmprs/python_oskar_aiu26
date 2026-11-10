@@ -93,8 +93,10 @@ def test_invalid_change_radius():
 def test_unit_circle():
     c1 = Circle(1)
     c2 = Circle(2)
+    c3 = Circle(1, 1, 1)
     assert c1.unit_circle_or_not() == True
     assert c2.unit_circle_or_not() == False
+    assert c3.unit_circle_or_not() == False
 
 def test_eq():
     c1 = Circle(5, 5, 5)

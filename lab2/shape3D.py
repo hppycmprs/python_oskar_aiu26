@@ -17,22 +17,22 @@ class Shape3D(ABC):
 
     def __lt__(self, other):
         if isinstance(other, Shape3D):
-            return self.area < other.area
+            return self.volume < other.volume
         return NotImplemented
 
     def __gt__(self, other):
         if isinstance(other, Shape3D):
-            return self.area > other.area
+            return self.volume > other.volume
         return NotImplemented
 
     def __le__(self, other):
         if isinstance(other, Shape3D):
-            return self.area <= other.area
+            return self.volume <= other.volume
         return NotImplemented
 
     def __ge__(self, other):
         if isinstance(other, Shape3D):
-            return self.area >= other.area
+            return self.volume >= other.volume
         return NotImplemented
     
     @abstractmethod

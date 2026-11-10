@@ -4,8 +4,24 @@ from utils import validate_type, validate_positive_value
 class Rectangle(Shape2D):
     def __init__(self, width, height, x=0, y=0):
         super().__init__(x, y)
-        self.width = validate_positive_value(validate_type(width))
-        self.height = validate_positive_value(validate_type(height))
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        return self._width
+
+    @width.setter
+    def width(self, value):
+        self._width = validate_positive_value(validate_type(value))
+
+    @property
+    def height(self):
+        return self._height
+
+    @height.setter
+    def height(self, value):
+        self._height = validate_positive_value(validate_type(value))
 
     @property
     def area(self):
@@ -14,7 +30,7 @@ class Rectangle(Shape2D):
 
     @property
     def perimeter(self):
-        perimeter = (self.width*self.width)+(self.height*self.height)
+        perimeter = 2*(self.width+self.height)
         return perimeter
 
     def square_or_not(self):

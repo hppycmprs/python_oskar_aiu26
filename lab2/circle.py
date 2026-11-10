@@ -5,7 +5,15 @@ import numpy as np
 class Circle(Shape2D):
     def __init__(self, radius, x=0, y=0):
         super().__init__(x, y)
-        self.radius = validate_positive_value(validate_type(radius))
+        self.radius = radius
+
+    @property
+    def radius(self):
+        return self._radius
+
+    @radius.setter
+    def radius(self, value):
+        self._radius = validate_positive_value(validate_type(value))
 
     @property
     def area(self):

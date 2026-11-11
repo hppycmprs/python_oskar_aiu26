@@ -22,7 +22,7 @@ class Shape3D(ABC):
         self.z = validate_type(z)
 
     def translate(self, x: int|float, y: int|float, z: int|float) -> None:
-        """Translates an object's coordinates.
+        """Translates the coordinates of an object of Shape3D.
 
         Args:
             x (int | float): The offset value that is added to the current x-coordinate.
@@ -104,7 +104,7 @@ class Shape3D(ABC):
 
         Returns:
             bool: True if the geometrical dimensions of self is equal to that of other, otherwise False.
-            NotImplementedType: If other is not of type Shape3D.
+            NotImplementedType: If other is not of the type in which the method is implemented.
 
         """
         pass

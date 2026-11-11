@@ -22,7 +22,7 @@ def test_invalid_width_height_init() -> None:
     with raises (TypeError):
         Rectangle(5, "5")
     with raises (TypeError):
-        Rectangle(True, 5)
+        Rectangle(True, 5) # since bool is subclass of int
     with raises (TypeError):
         Rectangle(5, False)
     with raises (TypeError):
@@ -69,7 +69,7 @@ def test_valid_translate() -> None:
     r1.translate(5, 5)
     assert r1.x == 10
     assert r1.y == 10
-    r1.translate(0.5, 0.5)
+    r1.translate(0.5, 0.5) # asserts that float is also valid
     assert r1.x == 10.5
     assert r1.y == 10.5
 
@@ -83,7 +83,7 @@ def test_invalid_translate() -> None:
         r1.translate(True, 5)
     with raises (TypeError):
         r1.translate(5, False)
-    assert r1.x == 5
+    assert r1.x == 5 # asserts that x and y stay unaltered after invalid translate
     assert r1.y == 5
 
 def test_valid_change_width() -> None:
@@ -99,7 +99,7 @@ def test_invalid_change_width() -> None:
         r1.width = True
     with raises (ValueError):
         r1.width = -6
-    assert r1.width == 5
+    assert r1.width == 5 # asserts that width stays unaltered after invalid change
 
 def test_valid_change_height() -> None:
     r1 = Rectangle(5, 5)
@@ -114,7 +114,7 @@ def test_invalid_change_height() -> None:
         r1.height = True
     with raises (ValueError):
         r1.height = -6
-    assert r1.height == 5
+    assert r1.height == 5 # asserts that height stays unaltered after invalid change
 
 def test_square() -> None:
     r1 = Rectangle(5, 5)

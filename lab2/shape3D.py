@@ -7,7 +7,7 @@ class Shape3D(ABC):
 
     """
     def __init__(self, x: int|float = 0, y: int|float = 0, z: int|float = 0) -> None:
-        """Initialises coordinates for a 3-dimensional shape.
+        """Initialises the coordinates for a 3-dimensional shape.
 
         Args:
             x (int | float): The x-coordinate of the shape.
@@ -115,7 +115,7 @@ class Shape3D(ABC):
         """Abstract method (read only) to be implemented by its subclasses, which in turn lets them use their own calculations for volume.
 
         Returns:
-            int | float: The volume of a 3-dimensional shape.
+            int | float: The calculated volume of a 3-dimensional shape.
         """
         pass
 
@@ -125,6 +125,6 @@ class Shape3D(ABC):
         """Abstract method (read only) to be implemented by its subclasses, which in turn lets them use their own calculations for surface area.
 
         Returns:
-            int | float: The surface area of a 3-dimensional shape.
+            int | float: The calculated surface area of a 3-dimensional shape.
         """
         pass

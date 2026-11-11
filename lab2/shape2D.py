@@ -8,7 +8,7 @@ class Shape2D(ABC):
 
     """
     def __init__(self, x: int|float = 0, y: int|float = 0) -> None:
-        """Initialises coordinates for a 2-dimensional shape.
+        """Initialises the coordinates for a 2-dimensional shape.
 
         Args:
             x (int | float): The x-coordinate of the shape.
@@ -111,7 +111,7 @@ class Shape2D(ABC):
         """Abstract method (read only) to be implemented by its subclasses, which in turn lets them use their own calculations for area.
 
         Returns:
-            int | float: The area of a 2-dimensional shape.
+            int | float: The calculated area of a 2-dimensional shape.
         """
         pass
 
@@ -121,6 +121,6 @@ class Shape2D(ABC):
         """Abstract method (read only) to be implemented by its subclasses, which in turn lets them use their own calculations for perimeter.
 
         Returns:
-            int | float: The perimeter of a 2-dimensional shape.
+            int | float: The calculated perimeter of a 2-dimensional shape.
         """
         pass

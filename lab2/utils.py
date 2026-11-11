@@ -8,7 +8,7 @@ def validate_type(value: int|float) -> int|float:
         int | float: The original value, if validation succeeds.
 
     Raises:
-        TypeError: If value is not of type int | float or if value is of type bool.
+        TypeError: If value is not of type int | float, or is a bool.
     """
     if not isinstance(value, (int, float)) or isinstance(value, bool):
         raise TypeError ("Value can only be a number")

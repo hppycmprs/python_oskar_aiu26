@@ -19,7 +19,7 @@ def test_invalid_radius_init() -> None:
     with raises (TypeError):
         Circle("5")
     with raises (TypeError):
-        Circle(True)
+        Circle(True) # since bool is subclass to int
     with raises (ValueError):
         Circle(-5)
     with raises (ValueError):
@@ -58,7 +58,7 @@ def test_valid_translate() -> None:
     c1.translate(5, 5)
     assert c1.x == 10
     assert c1.y == 10
-    c1.translate(0.5, 0.5)
+    c1.translate(0.5, 0.5) # asserts that float is also valid
     assert c1.x == 10.5
     assert c1.y == 10.5
 
@@ -72,7 +72,7 @@ def test_invalid_translate() -> None:
         c1.translate(True, 5)
     with raises (TypeError):
         c1.translate(5, False)
-    assert c1.x == 5
+    assert c1.x == 5 # asserts that x and y stay unaltered after invalid translate
     assert c1.y == 5
 
 def test_valid_change_radius() -> None:
@@ -88,7 +88,7 @@ def test_invalid_change_radius() -> None:
         c1.radius = True
     with raises (ValueError):
         c1.radius = -5
-    assert c1.radius == 5
+    assert c1.radius == 5 # asserts that radius stays unaltered after invalid change
 
 def test_unit_circle() -> None:
     c1 = Circle(1)

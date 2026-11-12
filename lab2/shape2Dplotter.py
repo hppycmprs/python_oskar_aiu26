@@ -35,9 +35,6 @@ class Shape2Dplotter:
                 lower_left_corner = (shape.x-(shape.width/2), shape.y-(shape.height/2)) # learnt from ChatGPT
                 ax.add_patch(ptc.Rectangle(lower_left_corner, shape.width, shape.height))
 
-            if not isinstance(shape, (Circle, Rectangle)):
-                raise TypeError("Can only plot 2D-shapes")
-
         ax.autoscale_view() # learnt from ChatGPT
         ax.set_aspect('equal') # learnt from ChatGPT
         plt.show()

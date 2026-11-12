@@ -8,7 +8,7 @@ class Circle(Shape2D):
     """Subclass of Shape2D, representing shapes in the form of circles.
 
     """
-    def __init__(self, radius: int|float, x: int|float = 0, y: int|float = 0) -> None:
+    def __init__(self, radius: float, x: float = 0, y: float = 0) -> None:
         """Initialises the radius and coordinates of a circle.
 
         Args:
@@ -34,7 +34,7 @@ class Circle(Shape2D):
         return self._radius
 
     @radius.setter
-    def radius(self, value: int|float) -> None:
+    def radius(self, value: float) -> None:
         """Setter of a circle's radius.
 
         Args:

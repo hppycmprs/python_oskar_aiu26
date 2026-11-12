@@ -7,7 +7,7 @@ class Cube(Shape3D):
     """Subclass of Shape3D, representing shapes in the form of cubes.
 
     """
-    def __init__(self, side_length: int|float, x: int|float = 0, y: int|float = 0, z: int|float = 0) -> None:
+    def __init__(self, side_length: float, x: float = 0, y: float = 0, z: float = 0) -> None:
         """Initialises the side length and coordinates of a cube.
 
         Args:
@@ -34,7 +34,7 @@ class Cube(Shape3D):
         return self._side_length
 
     @side_length.setter
-    def side_length(self, value: int|float) -> None:
+    def side_length(self, value: float) -> None:
         """Setter of a cube's side length.
 
         Args:

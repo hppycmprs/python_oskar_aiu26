@@ -7,7 +7,7 @@ class Shape2D(ABC):
     """Abstract superclass Shape2D, from which Rectangle and Circle inherit their common functionality.
 
     """
-    def __init__(self, x: int|float = 0, y: int|float = 0) -> None:
+    def __init__(self, x: float = 0, y: float = 0) -> None:
         """Initialises the coordinates for a 2-dimensional shape.
 
         Args:
@@ -20,7 +20,7 @@ class Shape2D(ABC):
         self.x = validate_type(x)
         self.y = validate_type(y)
 
-    def translate(self, x: int|float, y: int|float) -> None:
+    def translate(self, x: float, y: float) -> None:
         """Translates the coordinates of an object of Shape2D.
 
         Args:

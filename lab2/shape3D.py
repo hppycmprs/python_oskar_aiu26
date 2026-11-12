@@ -6,7 +6,7 @@ class Shape3D(ABC):
     """Abstract superclass Shape3D, from which Cube and Sphere inherit their common functionality.
 
     """
-    def __init__(self, x: int|float = 0, y: int|float = 0, z: int|float = 0) -> None:
+    def __init__(self, x: float = 0, y: float = 0, z: float = 0) -> None:
         """Initialises the coordinates for a 3-dimensional shape.
 
         Args:
@@ -21,7 +21,7 @@ class Shape3D(ABC):
         self.y = validate_type(y)
         self.z = validate_type(z)
 
-    def translate(self, x: int|float, y: int|float, z: int|float) -> None:
+    def translate(self, x: float, y: float, z: float) -> None:
         """Translates the coordinates of an object of Shape3D.
 
         Args:

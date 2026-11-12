@@ -7,7 +7,7 @@ class Sphere(Shape3D):
     """Subclass of Shape3D, representing shapes in the form of spheres.
 
     """
-    def __init__(self, radius: int|float, x: int|float = 0, y: int|float = 0, z: int|float = 0) -> None:
+    def __init__(self, radius: float, x: float = 0, y: float = 0, z: float = 0) -> None:
         """Initialises the radius and coordinates of a sphere.
 
         Args:
@@ -34,7 +34,7 @@ class Sphere(Shape3D):
         return self._radius
 
     @radius.setter
-    def radius(self, value: int|float) -> None:
+    def radius(self, value: float) -> None:
         """Setter of a sphere's radius.
 
         Args:

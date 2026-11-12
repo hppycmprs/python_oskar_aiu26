@@ -7,7 +7,7 @@ class Rectangle(Shape2D):
     """Subclass of Shape2D, representing shapes in the form of rectangles.
 
     """
-    def __init__(self, width: int|float, height: int|float, x: int|float = 0, y: int|float = 0) -> None:
+    def __init__(self, width: float, height: float, x: float = 0, y: float = 0) -> None:
         """Initialises the width, height and coordinates of a rectangle.
 
         Args:
@@ -35,7 +35,7 @@ class Rectangle(Shape2D):
         return self._width
 
     @width.setter
-    def width(self, value: int|float) -> None:
+    def width(self, value: float) -> None:
         """Setter of a rectangle's width.
 
         Args:
@@ -58,7 +58,7 @@ class Rectangle(Shape2D):
         return self._height
 
     @height.setter
-    def height(self, value: int|float) -> None:
+    def height(self, value: float) -> None:
         """Setter of a rectangle's height.
 
         Args:
@@ -71,7 +71,7 @@ class Rectangle(Shape2D):
         self._height = validate_positive_value(validate_type(value))
 
     @property
-    def area(self) -> int|float:
+    def area(self) -> float:
         """Read-only property of a rectangle's area.
 
         Returns:

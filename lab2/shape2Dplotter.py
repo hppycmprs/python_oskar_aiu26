@@ -1,20 +1,38 @@
 from circle import Circle
 from rectangle import Rectangle
-from sphere import Sphere
-from cube import Cube
-from utils import validate_positive_value, validate_type
 import matplotlib.pyplot as plt
 import matplotlib.patches as ptc
 
+
 class Shape2Dplotter:
-    def shape2Dplotter(self, *args):
+    """Class to plot 1 or more 2D-shapes in the same axes.
+    """
+
+    def shape2Dplotter(self, *args: Circle | Rectangle) -> None:
+        """Method to plot 1 or more 2D-shapes in the same axes.
+
+        Args:
+            *args (Circle | Rectangle): The shapes to plot.
+
+        Raises:
+            ValueError: If no shapes are provided.
+            TypeErrorr: If an object is not a Circle or Rectangle.
+        """
+        if len(args) == 0:
+            raise ValueError("At least one shape is required")
         fig, ax = plt.subplots()
+
         for shape in args:
             if isinstance(shape, Circle):
-                ax.add_patch(ptc.Circle((shape.x, shape.y), (shape.radius)))
+                ax.add_patch(ptc.Circle((shape.x, shape.y), shape.radius))
+
             if isinstance(shape, Rectangle):
                 lower_left_corner = (shape.x-(shape.width/2), shape.y-(shape.height/2))
                 ax.add_patch(ptc.Rectangle(lower_left_corner, shape.width, shape.height))
+
+            if not isinstance(shape, (Circle, Rectangle)):
+                raise TypeError("Can only plot 2D-shapes")
+
         ax.autoscale_view()
         ax.set_aspect('equal')
         plt.show()

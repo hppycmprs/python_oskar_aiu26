@@ -15,3 +15,6 @@ class Shape2Dplotter:
             if isinstance(shape, Rectangle):
                 lower_left_corner = (shape.x-(shape.width/2), shape.y-(shape.height/2))
                 ax.add_patch(ptc.Rectangle(lower_left_corner, shape.width, shape.height))
+        ax.autoscale_view()
+        ax.set_aspect('equal')
+        plt.show()
